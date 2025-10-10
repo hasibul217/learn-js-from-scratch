@@ -8,6 +8,9 @@ studentObject = {
 }
 
 
+studentIdArray= ['123', '343', '342']
+
 console.log ("Name: ", studentObject.studentAge)
 
-// console.log ("Guardian Name: ", studentObject.studentParentName)
+console.log (studentIdArray)
+
