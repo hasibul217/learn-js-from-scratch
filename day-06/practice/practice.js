@@ -29,19 +29,49 @@ console.log("Practice Problem 3");
 
 let isPalindrome = (str) => {
   let reverseStr = "";
-  for (let i = str.lenth; i > 0; i--) {
+  for (let i = str.length - 1; i >= 0; i--) {
     let stringChar = str[i];
     reverseStr += stringChar;
   }
 
-  // let strResult =
-  //   str == reverseStr ? "Its a palindrome" : "Its not a palindrome";
+  let strResult =
+    str == reverseStr ? "Its a palindrome" : "Its not a palindrome";
 
-  // return strResult;
-
-  return reverseStr;
+  return strResult;
 };
 
 let stringResult = isPalindrome("madam");
 
 console.log(stringResult);
+
+//Problem 04
+
+let factorial = (n) => {
+  let multiplicationNum = 1;
+  for (let i = 1; i <= n; i++) {
+    multiplicationNum *= i;
+  }
+
+  return multiplicationNum;
+};
+
+//problem 6
+
+let capitalizeWords = (sentence) => {
+  let capitalizedSentence = "";
+  for (let i = 0; i < sentence.length; i++) {
+
+    let currentChar = "";
+    if (i === 0 || sentence[i - 1] === " ") {
+       currentChar = sentence[i].toUpperCase();
+    } else {
+       currentChar = sentence[i];
+    }
+
+    capitalizedSentence += currentChar;
+  }
+  return capitalizedSentence;
+};
+
+finalstring = capitalizeWords("bulldog is very fat");
+console.log(finalstring);
