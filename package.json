@@ -1,0 +1,21 @@
+{
+  "name": "js-from-scratch",
+  "version": "1.0.0",
+  "description": "A personal journey to **sharpen my JavaScript skills** — starting from the absolute basics to advanced concepts.   The goal is to **build a strong foundation** in JavaScript before diving deeper into **frontend** or **backend** development.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hasibul217/learn-js-from-scratch.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/hasibul217/learn-js-from-scratch/issues"
+  },
+  "homepage": "https://github.com/hasibul217/learn-js-from-scratch#readme"
+}
