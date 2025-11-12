@@ -10,3 +10,13 @@ const outerCounter = () => {
 const retValue = outerCounter();
 
 retValue();
+retValue();
+retValue();
+
+
+//another one 
+
+const createBankAccount = (initialBalance) => {
+  let balance = initialBalance;
+  
+}
