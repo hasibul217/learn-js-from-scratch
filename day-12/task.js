@@ -52,9 +52,63 @@ const fighter = {
     return averageScore;
   },
 };
-const {name : fighterName} = fighter;
+const { name: fighterName } = fighter;
 const fighrtAvarageScore = fighter.calculateAveragePerformance();
 
 console.log(
   `${fighterName} has the avarage fight score of ${fighrtAvarageScore}`
 );
+
+//task 5
+
+const bookstore = {
+  name: "City Center Bookstore",
+  location: "Dhaka, Bangladesh",
+  books: [
+    {
+      title: "Atomic Habits",
+      author: "James Clear",
+      stock: 0,
+      price: 450,
+    },
+    {
+      title: "The Alchemist",
+      author: "Paulo Coelho",
+      stock: 89,
+      price: 350,
+    },
+    {
+      title: "Rich Dad Poor Dad",
+      author: "Robert Kiyosaki",
+      stock: 8,
+      price: 400,
+    },
+  ],
+
+  checkAvailability(bookTitle) {
+    for (let i = 0; i < this.books.length; i++) {
+      let book = this.books[i];
+      if (bookTitle == book.title) {
+        return book.stock > 0 ? "In Stock" : "Out of Stock";
+      } else {
+        return "No book found";
+      }
+    }
+  },
+  restockBook(bookTitle, quantity) {
+    for (let i = 0; i < this.books.length; i++) {
+      let book = this.books[i];
+
+      if (bookTitle === book.title) {
+        book.stock += quantity;
+        return `Restocked! ${book.title} now has ${book.stock} copies`;
+      }
+    }
+
+    return "Book not found in our store";
+  },
+};
+
+console.log(bookstore.checkAvailability("The Alchemist"));
+
+console.log(bookstore.restockBook("The Alchemist", 349));
