@@ -91,7 +91,7 @@ const fighterAlexander = {
   showOpponents() {
     console.log(`${this.name} has fought:`);
     
-    this.opponents.forEach(function(opponent) {
+    this.opponents.forEach((opponent) => {
       // Try to use 'this.name' here
       console.log(`${this.name} vs ${opponent}`);
     });
