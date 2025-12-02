@@ -35,7 +35,15 @@ const validateNumber = (number) => {
         throw new Error("Input must be a valid number")
     }
     else {
-        
+        console.log (`The number is ${number}`)
     }
 }
 
+try {
+  validateNumber("das");
+}
+catch(validationError){
+  console.error(validationError.message);
+  console.error(validationError.name)
+  
+}
