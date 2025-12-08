@@ -21,7 +21,7 @@ const divideNumbers = (a, b) => {
     } else {
       let result = a / b;
 
-      console.log(`The result is ${result}`)
+      console.log(`The result is ${result}`);
     }
   } catch (divisionError) {
     console.error(divisionError.message);
@@ -31,19 +31,41 @@ const divideNumbers = (a, b) => {
 divideNumbers(6, 7);
 
 const validateNumber = (number) => {
-    if (isNaN(number)){
-        throw new Error("Input must be a valid number")
-    }
-    else {
-        console.log (`The number is ${number}`)
-    }
-}
+  if (isNaN(number)) {
+    throw new Error("Input must be a valid number");
+  } else {
+    console.log(`The number is ${number}`);
+  }
+};
 
 try {
   validateNumber("das");
-}
-catch(validationError){
+} catch (validationError) {
   console.error(validationError.message);
-  console.error(validationError.name)
-  
+  console.error(validationError.name);
+}
+//form daata
+
+function validateForm(formData) {
+  if (!formData.userName) throw new Error("Please enter your name");
+  if (!formData.email) {
+    throw new Error("Please enter your email");
+  }
+  if (!formData.email.includes("@"))
+    throw new Error("Please enter a valid email");
+  if (formData.password != formData.passwordAgain)
+    throw new Error("Password Did not match");
+
+  console.log("Registration Successfull !!");
+}
+
+try {
+  validateForm({
+    userName: "fwefwef",
+    email: "shanto@gmail.com",
+    password: "1234",
+    passwordAgain: "1234",
+  });
+} catch (validateFormError) {
+  console.error(validateFormError.message);
 }
