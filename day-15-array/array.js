@@ -248,7 +248,7 @@ ufcRoster.pop();
 
 // 3. Log total fighters
 
-console.log(`Total number of fighter : ${ufcRoster.length}`)
+console.log(`Total number of fighter : ${ufcRoster.length}`);
 
 // 4. Change Conor's status
 
@@ -256,39 +256,40 @@ ufcRoster[3].active = false;
 
 console.log(ufcRoster[3].active);
 
-
-
 // Task B: Searching & Finding
 console.log("\n--- Task B: Searching & Finding ---");
 
 // 5. Find Khabib
 
-const rosterPosition = ufcRoster.findIndex( roster => roster.name === "Khabib Nurmagomedov");
+const rosterPosition = ufcRoster.findIndex(
+  (roster) => roster.name === "Khabib Nurmagomedov"
+);
 
 console.log(`Khabib position is at ${rosterPosition}`);
 
 // 6. Find index of fighter with id: 5
 
-const rosterIndex = ufcRoster.findIndex ( roster => roster.id === 5 );
+const rosterIndex = ufcRoster.findIndex((roster) => roster.id === 5);
 
 console.log(`The index of fighter with id 5 ${rosterIndex} `);
 
 // 7. Check if any retired fighters
 
-const retiredFighter = ufcRoster.find( retired => retired.active === false)
+const retiredFighter = ufcRoster.find((retired) => retired.active === false);
 
-console.log(`${retiredFighter.name} has retired from the UFC.`)
+console.log(`${retiredFighter.name} has retired from the UFC.`);
 
 // 8. Check if all have more than 20 wins
 
-const rosterWinCheck = ufcRoster.every( roster => roster.wins > 20);
+const rosterWinCheck = ufcRoster.every((roster) => roster.wins > 20);
 
-console.log(`The statement that all have more than 20 wins is ${rosterWinCheck}.`);
-
+console.log(
+  `The statement that all have more than 20 wins is ${rosterWinCheck}.`
+);
 
 // 9. Find first undefeated fighter
 
-const undefeatedRoster = ufcRoster.find(roster => roster.losses === 0);
+const undefeatedRoster = ufcRoster.find((roster) => roster.losses === 0);
 
 console.log(`First undefeated fighter is ${undefeatedRoster.name}`);
 
@@ -297,22 +298,49 @@ console.log("\n--- Task C: Division Analysis ---");
 
 // 10. Count Lightweight fighters
 
-const lightWeightFighters = ufcRoster.filter( lwf => lwf.division === "Lightweight" );
+const lightWeightFighters = ufcRoster.filter(
+  (lwf) => lwf.division === "Lightweight"
+);
 
-console.log(`Total lightweight fighter is ${lightWeightFighters.length}.`)
-
+console.log(`Total lightweight fighter is ${lightWeightFighters.length}.`);
 
 // 11. Get all Featherweight fighter names
 
-const featherWeightFighters = ufcRoster.filter (fwf => fwf.division === "Featherweight")
+const featherWeightFighters = ufcRoster.filter(
+  (fwf) => fwf.division === "Featherweight"
+);
 
-const featherWeightFightersName =  featherWeightFighters.map( fighter => fighter.name) ;
+const featherWeightFightersName = featherWeightFighters.map(
+  (fighter) => fighter.name
+);
 
-console.log (`All featherweight fighers name are ${featherWeightFightersName}`)
+console.log(`All featherweight fighers name are ${featherWeightFightersName}`);
 
 // 12. Find fighter with most wins
 
-const mostWinRoster = 
+let mostWinsInUFC = ufcRoster[0];
+
+for (let i = 0; i < ufcRoster.length; i++) {
+  let currentWins = ufcRoster[i];
+
+  if (currentWins.wins > mostWinsInUFC.wins) {
+    mostWinsInUFC = currentWins;
+  }
+}
+
+console.log(`Fighter with the most wins ${mostWinsInUFC.name}`);
+
+//using reduce method 
+
+let mostWinRoster = ufcRoster.reduce(getMostWins);
+
+console.log(`Fighter with the most wins ${mostWinRoster.name}`)
+
+function getMostWins(prev, next){
+  if (prev.wins > next.wins) {
+    return prev.wins;
+  }
+}
 
 
 // Task D: Validation & Checks
