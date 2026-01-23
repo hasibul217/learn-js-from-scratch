@@ -208,3 +208,11 @@ const fighterByDivision = ufcFighters.reduce((acc, fighter) => {
 }, {})
 
 console.log(fighterByDivision); // will do later
+
+
+
+
+f (){
+  return 
+}
+
