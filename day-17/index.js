@@ -19,3 +19,8 @@ let infoElems = document.getElementsByClassName("info");
 [...infoElems].forEach((elem) => {
   console.log(elem);
 });
+
+
+
+//task 1 
+
